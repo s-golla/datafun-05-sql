@@ -1,34 +1,69 @@
 # datafun-05-sql
 
-This repository contains the exercises and solution code for the "Datafun 05 — SQL" module. It includes SQL queries, example datasets, and supporting Python scripts used to run and validate queries against local data (when applicable).
+This repository contains a small example SQL schema and sample data used for the "Datafun 05 — SQL" exercises.
 
-**Contents**
-- `README.md`: This file.
-- `requirements.txt`: Python dependencies used by any helper scripts.
+Repository layout
+- `data/` — contains `db.sqlite` (example SQLite DB file) when present.
+- `sql_files/create_tables.sql` — CREATE TABLE statements for the sample schema.
+- `sql_files/insert_data.sql` — INSERT statements with sample authors and books.
+- `requirements.txt` — optional Python packages for helper scripts.
 
-**Getting Started**
+Goals
+- Provide a tiny, self-contained example schema (authors, books).
+- Offer ready-to-run SQL to create the schema and populate sample data.
 
-Prerequisites:
-- Python 3.8+ (if you plan to run helper scripts)
-- SQLite (or another SQL engine) if you want to run SQL locally
+Quick setup (Windows PowerShell)
 
-Quick setup:
-
-1. Create a virtual environment (optional but recommended):
+1) (Optional) Create and activate a virtual environment:
 
 ```powershell
-python -m venv .venv
+py -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+py -m pip install --upgrade pip
+py -m pip install -r requirements.txt
 ```
 
-2. Inspect or run SQL files using your preferred SQL engine. If the repository includes example `.sql` files or Python scripts, follow their usage instructions.
-
-Usage examples:
-
-- To run a Python helper script (if present):
+2) Run the SQL locally with SQLite (recommended):
 
 ```powershell
-python scripts/example_runner.py
+# Create an empty database file if needed
+sqlite3 data\db.sqlite ".quit"
+
+# Apply schema and insert data
+sqlite3 data\db.sqlite ".read sql_files/create_tables.sql" ";read sql_files/insert_data.sql"
 ```
+
+If `sqlite3` is not available, use Python's `sqlite3` module to apply the scripts:
+
+```powershell
+py - <<'PY'
+import sqlite3
+conn = sqlite3.connect('data/db.sqlite')
+with open('sql_files/create_tables.sql', 'r', encoding='utf-8') as f:
+	conn.executescript(f.read())
+with open('sql_files/insert_data.sql', 'r', encoding='utf-8') as f:
+	conn.executescript(f.read())
+print('Schema and data applied to data/db.sqlite')
+conn.close()
+PY
+```
+
+Quick verification (show a few rows):
+
+```powershell
+py - <<'PY'
+import sqlite3
+conn = sqlite3.connect('data/db.sqlite')
+cur = conn.cursor()
+cur.execute("SELECT author_id, name FROM authors LIMIT 5")
+print(cur.fetchall())
+cur.execute("SELECT book_id, title FROM books LIMIT 5")
+print(cur.fetchall())
+conn.close()
+PY
+```
+
+Notes and tips
+- The SQL files assume an empty DB; re-running them on a populated DB may cause PRIMARY KEY conflicts. Wrap the scripts in a transaction or add IF NOT EXISTS checks to make them re-runnable.
+- `requirements.txt` is optional — the examples use only the Python standard library, but you can add packages if you add helper scripts.
 
