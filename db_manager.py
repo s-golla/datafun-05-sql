@@ -51,6 +51,8 @@ def main() -> None:
         execute_sql_file(connection, SQL_CREATE_FOLDER.joinpath('drop_tables.sql'))
         execute_sql_file(connection, SQL_CREATE_FOLDER.joinpath('create_tables.sql'))
         execute_sql_file(connection, SQL_CREATE_FOLDER.joinpath('insert_data.sql'))
+        execute_sql_file(connection, SQL_CREATE_FOLDER.joinpath('update_data.sql'))
+        execute_sql_file(connection, SQL_CREATE_FOLDER.joinpath('delete_data.sql'))
 
         logger.info("Database setup completed successfully.")
     except Exception as e:

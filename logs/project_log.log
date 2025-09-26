@@ -6,3 +6,22 @@
 2025-09-25 20:39:29.646 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\insert_data.sql
 2025-09-25 20:39:29.647 | INFO     | __main__:main:55 - Database setup completed successfully.
 2025-09-25 20:39:29.647 | INFO     | __main__:main:60 - Database connection closed.
+2025-09-25 20:59:12.381 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-09-25 20:59:12.381 | INFO     | __main__:main:33 - Starting database setup...
+2025-09-25 20:59:12.384 | INFO     | __main__:main:47 - Connected to database: C:\Projects\datafun-05-sql\data\db.sqlite
+2025-09-25 20:59:12.413 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\drop_tables.sql
+2025-09-25 20:59:12.437 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\create_tables.sql
+2025-09-25 20:59:12.461 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\insert_data.sql
+2025-09-25 20:59:12.475 | ERROR    | __main__:execute_sql_file:27 - Failed to execute C:\Projects\datafun-05-sql\sql_files\update_data.sql: unrecognized token: "'AUTHOR_009;"
+2025-09-25 20:59:12.476 | ERROR    | __main__:main:59 - Error during database setup: unrecognized token: "'AUTHOR_009;"
+2025-09-25 20:59:12.476 | INFO     | __main__:main:62 - Database connection closed.
+2025-09-25 20:59:39.053 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-09-25 20:59:39.053 | INFO     | __main__:main:33 - Starting database setup...
+2025-09-25 20:59:39.055 | INFO     | __main__:main:47 - Connected to database: C:\Projects\datafun-05-sql\data\db.sqlite
+2025-09-25 20:59:39.082 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\drop_tables.sql
+2025-09-25 20:59:39.107 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\create_tables.sql
+2025-09-25 20:59:39.170 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\insert_data.sql
+2025-09-25 20:59:39.185 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\update_data.sql
+2025-09-25 20:59:39.200 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\delete_data.sql
+2025-09-25 20:59:39.200 | INFO     | __main__:main:57 - Database setup completed successfully.
+2025-09-25 20:59:39.201 | INFO     | __main__:main:62 - Database connection closed.

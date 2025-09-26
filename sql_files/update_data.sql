@@ -1,0 +1,1 @@
+UPDATE authors SET name = 'Updated Author' WHERE author_id = 'AUTHOR_009';
