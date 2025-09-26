@@ -80,6 +80,15 @@ Files of interest
 - `db_manager.py` — convenience script to apply SQL files and run queries
 - `requirements.txt` — optional packages
 
+Screenshots
+Below are two small mock screenshots (SVG) showing applying the schema and sample query results. View these files in the repo or on GitHub where SVGs render inline.
+
+- ![Apply schema](docs/screenshots/apply_schema.svg)  
+  Shows applying `create_tables.sql` and `insert_data.sql` via `sqlite3`/PowerShell.
+
+- ![Query results](docs/screenshots/query_results.svg)  
+  Example output for a couple of quick verification queries.
+
 Troubleshooting & tips
 - Re-running the raw SQL files on an existing database may raise PRIMARY KEY or UNIQUE constraint errors. To make scripts re-runnable, add IF NOT EXISTS to CREATE statements or use DROP TABLE IF EXISTS in `drop_tables.sql` before applying.
 - If you see encoding issues when reading SQL files, ensure they are UTF-8 encoded.
