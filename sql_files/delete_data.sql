@@ -1,1 +1,1 @@
-DELETE FROM authors WHERE author_id = 'AUTHOR_009';
+DELETE FROM authors WHERE author_id = 'AUTHOR_008';

@@ -25,3 +25,13 @@
 2025-09-25 20:59:39.200 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\delete_data.sql
 2025-09-25 20:59:39.200 | INFO     | __main__:main:57 - Database setup completed successfully.
 2025-09-25 20:59:39.201 | INFO     | __main__:main:62 - Database connection closed.
+2025-09-25 21:11:29.505 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-09-25 21:11:29.505 | INFO     | __main__:main:33 - Starting database setup...
+2025-09-25 21:11:29.506 | INFO     | __main__:main:47 - Connected to database: C:\Projects\datafun-05-sql\data\db.sqlite
+2025-09-25 21:11:29.529 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\drop_tables.sql
+2025-09-25 21:11:29.552 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\create_tables.sql
+2025-09-25 21:11:29.575 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\insert_data.sql
+2025-09-25 21:11:29.586 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\update_data.sql
+2025-09-25 21:11:29.615 | INFO     | __main__:execute_sql_file:25 - Executed: C:\Projects\datafun-05-sql\sql_files\delete_data.sql
+2025-09-25 21:11:29.616 | INFO     | __main__:main:57 - Database setup completed successfully.
+2025-09-25 21:11:29.616 | INFO     | __main__:main:62 - Database connection closed.
